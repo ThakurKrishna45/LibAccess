@@ -20,15 +20,17 @@ public class User {
 	private String email;
 	private String password;
 	private boolean active;
+	@ManyToOne
+	@JoinColumn(name="role_id")
+	private Role role;
+	
 	public boolean isActive() {
 		return active;
 	}
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	@ManyToOne
-	@JoinColumn(name="role_id")
-	private Role role;
+
 	public int getId() {
 		return id;
 	}
