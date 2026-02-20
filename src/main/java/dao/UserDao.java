@@ -19,6 +19,7 @@ public class UserDao {
 		query.setParameter("e",email);
 		query.setParameter("p",password);
 		user = query.uniqueResult();
+//		System.out.println(user.getEmail()+"dao");
 		return user;
 	}catch (Exception e) {
 		
