@@ -22,12 +22,17 @@ public class Login extends HttpServlet{
 			HttpSession session= req.getSession();
 			session.setAttribute("user",user);
 			session.setAttribute("userRole",user.getRole().getRoleName());
-			res.sendRedirect("user/dashboard.jsp");
-//			 if ("ADMIN".equals(user.getRole().getRoleName()))
-//	                res.sendRedirect("jsp/adminDashboard.jsp");
-//	            else
-//	                res.sendRedirect("jsp/studentDashboard.jsp");
+			
+			 if ("admin".equals(user.getRole().getRoleName())) {
+				res.sendRedirect("admin/dashboard.jsp");
+			 } else if("super admin".equals(user.getRole().getRoleName())){
+				 res.sendRedirect("superAdmin/dashboard.jsp");
+			 }else {
+				res.sendRedirect("user/dashboard.jsp");
+			 }
 		}else {
+			HttpSession session = req.getSession();
+		    session.setAttribute("error", "Invalid username or password.");
 			res.sendRedirect("login.jsp");
 		}
 	}
