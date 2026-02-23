@@ -35,10 +35,10 @@ public class viewBook extends HttpServlet{
         req.setAttribute("totalPages", totalPages);
         req.setAttribute("searchQuery", query);
     
-        System.out.println("DEBUG: Books found in DAO: " + (books != null ? books.size() : "NULL"));
+//        System.out.println("DEBUG: Books found in DAO: " + (books != null ? books.size() : "NULL"));
 
  
-        System.out.println("DEBUG: Attribute 'books' has been set.");
-        req.getRequestDispatcher("/user/viewBook.jsp").forward(req, res);
+//        System.out.println("DEBUG: Attribute 'books' has been set.");
+        req.getRequestDispatcher("/viewBook.jsp").forward(req, res);
 	}
 }

@@ -15,7 +15,8 @@
 </tr>
 
 <%
-List<BookIssue> list = (List<BookIssue>) request.getAttribute("issues");
+List<BookIssue> list = (List<BookIssue>) request.getAttribute("IssuedBooks");
+if(list==null)return;
 for(BookIssue i : list){
 %>
 <tr>

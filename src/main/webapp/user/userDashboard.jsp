@@ -24,14 +24,21 @@ if(user == null){
 <p><strong>Email:</strong> <%= user.getEmail() %></p>
 <p><strong>Role:</strong> <%= user.getRole().getRoleName() %></p>
 
+        <p>
+            <strong>Account:</strong> 
+            <span style="color: <%= user.isActive() ? "green" : "red" %>; font-weight: bold;">
+                <%= user.isActive() ? "Active" : "Inactive" %>
+            </span>
+        </p>
+ 
 <hr>
 
 <h3>Actions</h3>
 
 <!-- Student / Normal User -->
-<% if("USER".equals(user.getRole())) { %>
-    <a href="myIssuedBooks">View My Issued Books</a><br><br>
-    <a href="viewBooks">View Available Books</a><br><br>
+<% if("student".equals(user.getRole().getRoleName())) { %>
+    <a href="../UserIssuedBook">View My Issued Books</a><br><br>
+    <a href="../viewBook">View Available Books</a><br><br>
 <% } %>
 
 

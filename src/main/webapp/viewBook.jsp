@@ -33,5 +33,19 @@ if (list != null && !list.isEmpty()) {
     </tr>
 <% } %>
 </table>
+<div style="margin-top: 20px;">
+
+    <% if ((Integer)request.getAttribute("currentPage") > 1) { %>
+        <a href="viewBook?page=<%= (Integer)request.getAttribute("currentPage") - 1 %>">Prev</a>
+    <% } %>
+
+ 
+    <span> Page <%= request.getAttribute("currentPage") %> of <%= request.getAttribute("totalPages") %> </span>
+
+
+    <% if ((Integer)request.getAttribute("currentPage") < (Integer)request.getAttribute("totalPages")) { %>
+        <a href="viewBook?page=<%= (Integer)request.getAttribute("currentPage") + 1 %>">Next</a>
+    <% } %>
+</div>
 </body>
 </html>

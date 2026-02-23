@@ -68,10 +68,11 @@ public class UserDao {
 	public List<BookIssue> userIssuedBooks(int userId){
 		List<BookIssue> li =null;
 		try(Session session=HibernateUtil.getSessionFactory().openSession()){
-			StringBuilder hql= new StringBuilder("From BookIssue bi where bi.user= :uid ORDER BY bi.issueDate DESC");
+			StringBuilder hql= new StringBuilder("From BookIssue bi where bi.user.id= :uid ORDER BY bi.issueDate DESC");
 			Query<BookIssue> query= session.createQuery(hql.toString(),BookIssue.class);
 			query.setParameter("uid", userId);
 			li= query.getResultList();
+			System.out.println("he"+userId+" "+li);
 		}
 		return li;
 	}
