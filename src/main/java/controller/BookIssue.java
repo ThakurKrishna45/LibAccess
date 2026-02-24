@@ -3,6 +3,7 @@ package controller;
 import org.hibernate.Session;
 
 import dao.BookIssueDao;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import model.Book;
 import model.User;
 import util.HibernateUtil;
 
+@WebServlet("/admin/issueBook")
 public class BookIssue extends HttpServlet{
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse res) {

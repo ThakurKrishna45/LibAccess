@@ -24,9 +24,9 @@ public class Login extends HttpServlet{
 			session.setAttribute("userRole",user.getRole().getRoleName());
 			
 			 if ("admin".equals(user.getRole().getRoleName())) {
-				res.sendRedirect("admin/dashboard.jsp");
+				res.sendRedirect("admin/adminDashboard.jsp");
 			 } else if("super admin".equals(user.getRole().getRoleName())){
-				 res.sendRedirect("superAdmin/dashboard.jsp");
+				 res.sendRedirect("superAdmin/superAdminDashboard.jsp");
 			 }else {
 				res.sendRedirect("user/userDashboard.jsp");
 			 }
