@@ -8,7 +8,11 @@
 </head>
 <body>
 <h2>Available Books</h2>
-
+<form action="viewBook" method="get" style="margin-bottom: 20px;">
+    <input type="text" name="searchQuery" placeholder="Search by title or author..." 
+           value="<%= (request.getParameter("searchQuery") != null) ? request.getParameter("searchQuery") : "" %>">
+    <button type="submit">Search</button>
+</form>
 <table border="1">
 <tr>
     <th>Name</th><th>Author</th><th>Qty</th>
