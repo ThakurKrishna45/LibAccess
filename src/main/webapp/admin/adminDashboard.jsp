@@ -36,7 +36,8 @@ if(user == null ||
 <a href="issueBook">Issue Book</a><br><br>
 <a href="returnBook">Return Book</a><br><br>
 <a href="../viewBook">View All Books</a><br><br>
-
+<a href="deleteBook">Delete Book</a><br><br>
+<a href="updateBook">Update Book</a><br><br>
 <hr>
 <a href="../logout">Logout</a>
 

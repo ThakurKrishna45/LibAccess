@@ -37,8 +37,7 @@ public class addNewBook extends HttpServlet {
             int copies = Integer.parseInt(qtyStr);
 
             BookDao bd = new BookDao();
-            Book bk = bd.addNewBook(isbn, title, author);
-            bd.addCopies(copies, bk);
+            Book bk = bd.addNewBook(isbn, title, author,copies);
 
             session.setAttribute("successMsg", "Book '" + title + "' added successfully!");
 
